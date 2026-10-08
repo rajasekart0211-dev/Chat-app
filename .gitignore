@@ -1,0 +1,29 @@
+# Maven
+target/
+
+# Compiled files
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+application-local.properties
+application-secret.properties
+
+# Spring Boot generated files
+.springBeans
+.sts4-cache/
+
+# Temporary files
+*.tmp
