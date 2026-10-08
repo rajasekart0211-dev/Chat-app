@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat App</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white flex items-center justify-center p-4">
+
+<!-- Name Box -->
+<div
+        id="name-box"
+        class="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl shadow-xl p-8"
+>
+    <div class="text-center mb-6">
+        <h1 class="text-3xl font-bold">Welcome 👋</h1>
+        <p class="text-slate-400 mt-2">
+            Enter your name to join the chat
+        </p>
+    </div>
+
+    <div class="flex flex-col gap-4">
+        <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                autocomplete="off"
+                class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700
+                       outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20
+                       placeholder:text-slate-500"
+        >
+
+        <button
+                class="name-submit w-full py-3 rounded-xl bg-blue-600
+                       hover:bg-blue-700 transition font-semibold"
+        >
+            Enter Chat
+        </button>
+    </div>
+</div>
+
+
+<!-- Chat Box -->
+<div
+        id="chat-box"
+        class="hidden w-full max-w-2xl h-[80vh] bg-slate-900
+               border border-slate-800 rounded-2xl shadow-2xl
+               overflow-hidden flex-col"
+>
+
+    <!-- Header -->
+    <div class="px-6 py-4 border-b border-slate-800 bg-slate-900">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-xl font-bold">Chat Room</h1>
+                <p class="text-sm text-green-400">
+                    ● Connected
+                </p>
+            </div>
+
+            <div
+                    id="current-user"
+                    class="text-sm text-slate-400"
+            ></div>
+        </div>
+    </div>
+
+
+    <!-- Messages -->
+    <div
+            class="flex-1 overflow-y-auto p-5 bg-slate-950/50"
+    >
+        <ul
+                id="messages"
+                class="space-y-3"
+        ></ul>
+    </div>
+
+
+    <!-- Message Input -->
+    <div class="p-4 border-t border-slate-800 bg-slate-900">
+
+        <div class="flex gap-3">
+
+            <input
+                    id="m"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Type a message..."
+                    class="message flex-1 px-4 py-3 rounded-xl
+                           bg-slate-800 border border-slate-700
+                           outline-none focus:border-blue-500
+                           placeholder:text-slate-500"
+            >
+
+            <button
+                    id="send"
+                    class="send px-6 py-3 rounded-xl bg-blue-600
+                           hover:bg-blue-700 transition font-semibold"
+            >
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SockJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+
+<!-- STOMP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+<!-- Your JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
